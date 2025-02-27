@@ -4,17 +4,7 @@ import InputField from '../../components/InputField';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 function LoginScreen({}: LoginScreenProps) {
-  const [values, setValues] = useState({
-    email: '',
-    password: '',
-  });
-
-  const handleChangeText = (name: string, text: string) => {
-    setValues({
-      ...values,
-      [name]: text,
-    });
-  };
+  const handleSubmit = () => {};
 
   return (
     <SafeAreaView style={styles.container}>
@@ -25,6 +15,7 @@ function LoginScreen({}: LoginScreenProps) {
           inputMode="email"
           value={values.email}
           onChangeText={text => handleChangeText('email', text)}
+          onBlur={() => handleBlur('email')}
         />
         <InputField
           placeholder="비밀번호"
@@ -32,8 +23,15 @@ function LoginScreen({}: LoginScreenProps) {
           secureTextEntry
           value={values.password}
           onChangeText={text => handleChangeText('password', text)}
+          onBlur={() => handleBlur('password')}
         />
       </View>
+      <CustomButton
+        label="로그인"
+        variant="filled"
+        size="large"
+        onPress={handleSubmit}
+      />
     </SafeAreaView>
   );
 }
@@ -45,6 +43,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     gap: 20,
+    marginBottom: 30,
   },
 });
 
