@@ -11,7 +11,7 @@ import {colors} from '../constants';
 
 interface CustomButtonProps extends PressableProps {
   label: string;
-  variant?: 'filed' | 'outlined';
+  variant?: 'filled' | 'outlined';
   size?: 'large' | 'medium';
   inValid?: boolean;
 }
@@ -20,7 +20,7 @@ const deviceHeight = Dimensions.get('screen').height;
 
 function CustomButton({
   label,
-  variant = 'filed',
+  variant = 'filled',
   size = 'large',
   inValid = false,
   ...props
@@ -43,7 +43,7 @@ function CustomButton({
   );
 }
 
-const styling = (theme: ThemeMode) =>
+const styles = (theme: ThemeMode) =>
   StyleSheet.create({
     container: {
       borderRadius: 3,
