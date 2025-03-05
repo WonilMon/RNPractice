@@ -7,6 +7,7 @@ import {validateLogin} from '../../utils';
 import CustomButton from '../../components/CustomButton';
 import {TextInput} from 'react-native-gesture-handler';
 
+// 존나어렵다
 function LoginScreen({}: LoginScreenProps) {
   // const [values, setValues] = useState({
   //   email: '',

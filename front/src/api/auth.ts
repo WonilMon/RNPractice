@@ -36,7 +36,7 @@ const postLogin = async ({
 };
 
 // domain에 있는 타입들 참고
-type ResponseProfile = Profile & Category;
+type ResponseProfile = Profile & Category; 
 
 const getProfile = async (): Promise<ResponseProfile> => {
   const {data} = await axiosInstance.get('/auth/me');
